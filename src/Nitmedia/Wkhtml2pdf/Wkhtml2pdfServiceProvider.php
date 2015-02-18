@@ -13,7 +13,7 @@ class Wkhtml2pdfServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->package('Nitmedia/Wkhtml2pdf');
+
     }
 
     /**

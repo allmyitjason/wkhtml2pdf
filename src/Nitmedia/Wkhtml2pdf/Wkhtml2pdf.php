@@ -139,94 +139,94 @@ class Wkhtml2pdf
         $this->config = $config;
         $this->view = $view;
 
-	$binpath = $this->config->get('nitmedia_wkhtml2pdf.binpath');
+	$binpath = $this->config->get('nitmedia.wkhtml2pdf.binpath');
 
         if ($binpath)
         {
             if( $binpath[0] === '/')
             {
-                $this->setBinPath($this->config->get('nitmedia_wkhtml2pdf.binpath'));
+                $this->setBinPath($this->config->get('nitmedia.wkhtml2pdf.binpath'));
             }
             else
             {
-                $this->setBinPath( realpath(__DIR__) . '/' . $this->config->get('nitmedia_wkhtml2pdf.binpath'));
+                $this->setBinPath( realpath(__DIR__) . '/' . $this->config->get('nitmedia.wkhtml2pdf.binpath'));
             }
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.binfile'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.binfile'))
         {
-            $this->setBinFile($this->config->get('nitmedia_wkhtml2pdf.binfile'));
+            $this->setBinFile($this->config->get('nitmedia.wkhtml2pdf.binfile'));
         }
 
         /* Check the binary executable exists */
         $this->getBin();
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.html'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.html'))
         {
             $this->setHtml($this->config->get('html'));
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.orientation'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.orientation'))
         {
-            $this->setOrientation($this->config->get('nitmedia_wkhtml2pdf.orientation'));
+            $this->setOrientation($this->config->get('nitmedia.wkhtml2pdf.orientation'));
         }
         else
         {
             $this->setOrientation(self::ORIENTATION_PORTRAIT);
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.page_size'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.page_size'))
         {
-            $this->setPageSize($this->config->get('nitmedia_wkhtml2pdf.page_size'));
+            $this->setPageSize($this->config->get('nitmedia.wkhtml2pdf.page_size'));
         }
         else
         {
             $this->setPageSize(self::SIZE_A4);
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.toc'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.toc'))
         {
-            $this->setTOC($this->config->get('nitmedia_wkhtml2pdf.toc'));
+            $this->setTOC($this->config->get('nitmedia.wkhtml2pdf.toc'));
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.grayscale'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.grayscale'))
         {
-            $this->setGrayscale($this->config->get('nitmedia_wkhtml2pdf.grayscale'));
+            $this->setGrayscale($this->config->get('nitmedia.wkhtml2pdf.grayscale'));
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.title'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.title'))
         {
-            $this->setTitle($this->config->get('nitmedia_wkhtml2pdf.title'));
+            $this->setTitle($this->config->get('nitmedia.wkhtml2pdf.title'));
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.debug'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.debug'))
         {
-            $this->debug = $this->config->get('nitmedia_wkhtml2pdf.debug');
+            $this->debug = $this->config->get('nitmedia.wkhtml2pdf.debug');
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.header_html'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.header_html'))
         {
-            $this->setHeaderHtml($this->config->get('nitmedia_wkhtml2pdf.header_html'));
+            $this->setHeaderHtml($this->config->get('nitmedia.wkhtml2pdf.header_html'));
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.footer_html'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.footer_html'))
         {
-            $this->setFooterHtml($this->config->get('nitmedia_wkhtml2pdf.footer_html'));
+            $this->setFooterHtml($this->config->get('nitmedia.wkhtml2pdf.footer_html'));
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.tmppath'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.tmppath'))
         {
-            $this->setTmpPath($this->config->get('nitmedia_wkhtml2pdf.tmppath'));
+            $this->setTmpPath($this->config->get('nitmedia.wkhtml2pdf.tmppath'));
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.output_mode'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.output_mode'))
         {
-            $this->setOutputMode($this->config->get('nitmedia_wkhtml2pdf.output_mode'));
+            $this->setOutputMode($this->config->get('nitmedia.wkhtml2pdf.output_mode'));
         }
 
-        if ($this->config->get('nitmedia_wkhtml2pdf.options'))
+        if ($this->config->get('nitmedia.wkhtml2pdf.options'))
         {
-            $this->setOptions($this->config->get('nitmedia_wkhtml2pdf.options'));
+            $this->setOptions($this->config->get('nitmedia.wkhtml2pdf.options'));
         }
     }
 
@@ -871,7 +871,7 @@ class Wkhtml2pdf
 
         $content = $this->_pipeExec($command);
 
-        if($this->config->get('nitmedia_wkhtml2pdf.debug'))
+        if($this->config->get('nitmedia.wkhtml2pdf.debug'))
         {
             dd(array(
                 'input' => $input,
